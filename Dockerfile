@@ -39,7 +39,7 @@ RUN set -ex \
 
 
 ENV MONGO_MAJOR 3.2
-ENV MONGO_VERSION 3.2.10
+ENV MONGO_VERSION 3.2.11
 ENV MONGO_PACKAGE mongodb-org
 
 RUN echo "deb http://repo.mongodb.org/apt/debian jessie/mongodb-org/$MONGO_MAJOR main" > /etc/apt/sources.list.d/mongodb-org.list
@@ -72,4 +72,4 @@ EXPOSE 27017 28017
 COPY mongodb.sv.conf /etc/supervisor/conf.d/mongodb.sv.conf
 
 # default command
-CMD ["supervisord", "-c", "/etc/supervisor.conf"]
+CMD ["supervisord", "-c", "/etc/supervisor/supervisor.conf"]
